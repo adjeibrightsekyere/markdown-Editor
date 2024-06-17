@@ -1,0 +1,37 @@
+
+.transition-transform {
+    transition: transform 0.3s ease;
+  }
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  .prose h1 {
+    @apply text-[32px] font-roboto-slab font-bold my-2 text-red-500 dark:text-white;
+  }
+  
+  .prose h2 {
+    @apply text-[28px] font-roboto-slab font-light  text-gray-900 dark:text-gray-100;
+  }
+
+  .prose h3 {
+    @apply text-[24px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+  }
+  .prose h4 {
+    @apply text-[20px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+  }
+
+  .prose h5 {
+    @apply text-[16px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+  }
+
+  .prose h6 {
+    @apply text-[14px] font-roboto-slab font-bold  text-gray-900 dark:text-gray-100;
+  }
+  
+  .prose p {
+    @apply my-2 text-base text-blue-700 dark:text-gray-300;
+  }
+  
+  .prose a {
+    @apply text-blue-600 dark:text-blue-400;
+  }
