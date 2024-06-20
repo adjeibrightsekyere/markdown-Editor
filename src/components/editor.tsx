@@ -1,12 +1,15 @@
+import '../App.css'
+
 interface EditorProps {
     markdown: string;
     setMarkdown: (markdown: string) => void;
+    isDarkMode: boolean;
 }
 
-function Editor({markdown, setMarkdown}: EditorProps) {
+function Editor({markdown, setMarkdown, isDarkMode}: EditorProps) {
     return(
-       <div className="flex flex-col h-full md:border-r-2 border-[#979797]">
-            <div className="bg-[#F5F5F5] text-[#7C8187] font-roboto p-1 text-sm">
+       <div className="flex flex-col h-full md:border-r-2 border-[#979797] ">
+            <div className={`bg-[#F5F5F5]  text-[#7C8187] font-roboto p-1 text-sm ${ isDarkMode ? 'bg-[#1D1F22] text-[#C1C4CB]' : 'bg-[#F5F5F5] text-[#7C8187]'}`}>
                 MARKDOWN
             </div>
             <textarea 

@@ -1,3 +1,159 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --bg-secondary: #ffffff;
+  --text-secondary: #7c8187;
+  --border-color: #2B2D31;
+  --header-bg: #979797;
+  --dark-bg-secondary: #1D1F22;
+  --dark-header-bg: #2B2D31;
+}
+
+.dark {
+  --bg-color: #151619;
+  --text-color: #ffffff;
+  --bg-secondary: #151619;
+  --text-secondary: #ffffff;
+  --border-color: #2B2D31;
+  --header-bg: var(--dark-header-bg);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+nav, .flex-grow, .w-full {
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.markdown-header, .preview-header {
+  background-color: var(--header-bg);
+  color: var(--text-secondary);
+}
+
+
+.preview-only {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; 
+  height: calc(100% - 72px); 
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.dark .preview-only {
+  background-color: var(--dark-bg-secondary); 
+  border-color: var(--border-color);
+}
+
+.preview-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+}
+
+.preview-only .preview-content {
+  align-items: center; 
+  justify-content: center; 
+  height: 100%;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 50; /* Ensures the modal is on top */
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.bg-red-500 {
+  background-color: #f56565;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+ 
+
+
 
 .transition-transform {
     transition: transform 0.3s ease;

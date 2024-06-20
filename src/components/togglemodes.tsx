@@ -1,20 +1,22 @@
-import  { useState } from 'react';
+
 import '../App.css';
 
 import Moon from '../assets/Moon.png';
 import Sun from '../assets/Sun.png';
 
+interface ToggleModeProps {
+    isDarkMode: boolean;
+    setIsDarkMode: (isDarkmode: boolean) => void;
+}
 
-const ToggleMode = () => {
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
+const ToggleMode: React.FC<ToggleModeProps> = ({ isDarkMode, setIsDarkMode}) => {
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode)
     }
 
     return (
-        <div className={`min-h-screen flex   ${isDarkMode ? 'bg-[#151619] text-white' : 'bg-white text-black'}`}>
+        <div className={`min-h-screen flex   ${isDarkMode ? 'bg-[#151619] text-white' : 'bg-white text-black'}`} >
             <div className=' flex border border-[#2B2D31] bg-[#2B2D31]  cursor-pointer w-40 h-20 rounded-none justify-center items-center gap-2'>
                 <img
                     src={Moon}

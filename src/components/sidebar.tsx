@@ -8,8 +8,10 @@ interface SideBarProps{
     documents: { id: number; name: string}[];
     onNewDocument: () => void;
     onDocumentClick: (id: number) => void;
+    isDarkMode: boolean;
+    setIsDarkMode: (isDarkMode: boolean) => void;
 }
-const SideBar: React.FC<SideBarProps> = ({onClose, documents, onNewDocument, onDocumentClick}) => {
+const SideBar: React.FC<SideBarProps> = ({onClose, documents, onNewDocument, onDocumentClick, isDarkMode, setIsDarkMode}) => {
     return(
         <div className="fixed top-0 left-0 h-full w-64 bg-[#2B2D31] text-white z-50">
             <div className='flex justify-between items-center p-4'>
@@ -24,14 +26,14 @@ const SideBar: React.FC<SideBarProps> = ({onClose, documents, onNewDocument, onD
             <ul>
                 {documents.map(doc => (
                     <li key={doc.id} onClick={() => onDocumentClick(doc.id)} 
-                    className='cursor-pointer p-2 hover:bg-gray-700 rounded'
+                    className='cursor-pointer p-5  hover:bg-gray-700 rounded'
                     >
                         {doc.name}
                     </li>
                 ))}
             </ul>
-            <div className='absolute w-full -bottom-[600px]  flex justify-center'>
-                <ToggleMode/>
+            <div className='absolute  -bottom-[600px] left-7 flex justify-center'>
+                <ToggleMode isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
             </div>
         </div>
     )
