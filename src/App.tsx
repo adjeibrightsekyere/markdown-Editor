@@ -16,7 +16,7 @@ import Modal from './components/Modal';
 
 
 function App() {
-  const [markdown, setMarkdown] = useState('#Markdown Editor')
+  const [markdown, setMarkdown] = useState('#Welcome to Markdown')
   const [isSideBarOpen, setIsSideBarOpen] = useState(false);
   const [documents, setDocuments] = useState([{ id: 1, name: 'Welcome.md', content: '#Markdown Editor' }]);
   const [activeDocId, setActiveDocId] = useState(1);
