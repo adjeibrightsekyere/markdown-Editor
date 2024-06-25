@@ -1,3 +1,4 @@
+
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
@@ -7,6 +8,7 @@
   --header-bg: #979797;
   --dark-bg-secondary: #1D1F22;
   --dark-header-bg: #2B2D31;
+  --accent-color: #E46643;
 }
 
 .dark {
@@ -46,7 +48,26 @@ nav, .flex-grow, .w-full {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
+@media (min-width: 375px) {
+  .preview-only {
+    position: fixed;
+    top: 55px;
+    
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; 
+    height: calc(100% - 55px); 
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }}
+
 .dark .preview-only {
+  background-color: var(--dark-bg-secondary); 
+  border-color: var(--border-color);
+}
+
+.dark .editor-only {
   background-color: var(--dark-bg-secondary); 
   border-color: var(--border-color);
 }
@@ -56,81 +77,59 @@ nav, .flex-grow, .w-full {
 .preview-only .preview-content {
   align-items: flex-start; 
   justify-content: center; 
+  margin-left: 35%;
   height: 100%;
 }
 
+@media (min-width: 375px) {
+  .preview-only .preview-content {
+    align-items: flex-start; 
+  justify-content: center; 
+  margin-left: 10%;
+  height: 100%;
+  }}
+
+  .editor-only {
+    width: 100%;
+    left: 0;
+    transform: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  @media (min-width: 375px) {
+    .editor-only {
+      position: fixed;
+      top: 55px;
+      
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%; 
+      height: calc(100% - 55px); 
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color); 
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    }}
+
+  @media (min-width: 375px) {
+    .editor-only .editor-content {
+      align-items: flex-start; 
+    justify-content: center; 
+    margin-left: 10%;
+    height: 100%;
+    }}
+
+  .editor-only .editor-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+
 .fixed {
   position: fixed;
-  z-index: 50; /* Ensures the modal is on top */
+  z-index: 50; 
 }
 
-.bg-opacity-50 {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.rounded {
-  border-radius: 0.25rem;
-}
-
-.shadow-lg {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
-
-.bg-black {
-  background-color: #000;
-}
-
-.bg-white {
-  background-color: #fff;
-}
-
-.text-black {
-  color: #000;
-}
-
-.text-white {
-  color: #fff;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.gap-2 {
-  gap: 0.5rem;
-}
-
-.bg-red-500 {
-  background-color: #f56565;
-}
-
-.bg-gray-300 {
-  background-color: #e2e8f0;
-}
-
-.rounded {
-  border-radius: 0.25rem;
-}
 
 .px-4 {
   padding-left: 1rem;
@@ -142,9 +141,7 @@ nav, .flex-grow, .w-full {
   padding-bottom: 0.5rem;
 }
 
-.cursor-pointer {
-  cursor: pointer;
-}
+
 
  
 
@@ -157,42 +154,121 @@ nav, .flex-grow, .w-full {
     min-height: 100vh;
   }
   .prose h1 {
-    @apply text-[32px] font-roboto-slab font-bold my-2 text-red-500 dark:text-white;
+    font-size: 32px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
   
   .prose h2 {
-    @apply text-[28px] font-roboto-slab font-light  text-gray-900 dark:text-gray-100;
+    font-size: 28px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: normal;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
-
+  
   .prose h3 {
-    @apply text-[24px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+    font-size: 24px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
+  
   .prose h4 {
-    @apply text-[20px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
-
+  
   .prose h5 {
-    @apply text-[16px] font-roboto-slab font-bold   text-gray-900 dark:text-gray-100;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
   }
-
+  
   .prose h6 {
-    @apply text-[14px] font-roboto-slab font-bold  text-gray-900 dark:text-gray-100;
+    font-size: 14px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
   }
   
   .prose p {
-    @apply my-2 text-base text-blue-700 dark:text-gray-300;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 16px;
+    font-family: 'Roboto Slab', serif;
+    color: var(--text-color);
+  }
+
+  
+  
+  .dark .prose p code {
+    color: var(--inline-code-color);
   }
   
   .prose a {
-    @apply text-blue-600 dark:text-blue-400;
+    color: var(--text-color);
+    text-decoration: none;
   }
 
+  .prose blockquote {
+    border-left: 4px solid var(--accent-color); 
+    padding-left: 1rem;
+    margin: 0.5rem 0;
+    color: var(--text-secondary);
+    background-color: #F5F5F5;
+    font-style: normal;
+  }
+
+  .dark .prose blockquote {
+    background-color: #2B2D31; 
+    color: #ffffff; 
+  }
+    
+    .prose ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      list-style-type: disc;
+      font-family: 'Roboto Slab', serif;
+    }
+    
+    .prose ul li {
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+
+      color: var(--text-color);
+      font-family: 'Roboto Slab', serif;
+    }
+
+    .prose ul li::marker {
+      color: var(--accent-color); 
+    }
+  
+  
   .prose {
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
-
+  
   .preview-text {
     white-space: pre-wrap;
     word-wrap: break-word;
   }
+
+  
