@@ -33,7 +33,7 @@ function Editor({markdown, setMarkdown, isDarkMode}: EditorProps) {
             <textarea 
             placeholder="bio" 
             value={markdown}
-            className=" flex-grow w-full h-full overflow-hidden outline-none p-6 resize-none"  onChange={(e) => setMarkdown (e.target.value)}>
+            className=" flex-grow w-full h-full overflow-auto md:overflow-hidden outline-none p-6 resize-none"  onChange={(e) => setMarkdown (e.target.value)}>
                 {markdown}
             </textarea>
        </div>

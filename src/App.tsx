@@ -64,7 +64,7 @@ function App() {
       date: new Date().toLocaleDateString(),
       content: ''
     };
-    const updatedDocs = [...documents, newDoc];
+    const updatedDocs = [newDoc, ...documents];
     setDocuments(updatedDocs);
     setActiveDocId(newDoc.id)
     setMarkdown(newDoc.content)

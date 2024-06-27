@@ -1,17 +1,61 @@
 import React from "react";
+import styled from "styled-components";
 import save from '../../assets/save.png';
+
+const SaveButtonContainer = styled.div`
+    display: flex;
+    border: 1px solid #E46643;
+    background: #E46643;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+
+    &:hover {
+        background: #F39765;
+    }
+    @media (min-width: 768px) {
+    width: 9rem;
+  }
+`;
+
+const SaveIcon = styled.img`
+    width: 1rem;
+    height: 1rem;
+
+    @media (min-width: 768px) {
+        width: 1rem;
+        height: 1rem;
+    }
+`;
+
+const SaveText = styled.h1`
+    display: none;
+    font-size: 0.875rem;
+    font-weight: normal;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+
+    @media (min-width: 768px) {
+        display: block;
+    }
+`;
 
 interface SaveButtonProps {
     onSave: () => void;
 }
 const SaveButton: React.FC<SaveButtonProps> = ({ onSave }) => {
     return (
-        <div onClick={onSave} className='flex border border-[#E46643] bg-[#E46643] hover:bg-[#F39765] cursor-pointer w-10 md:w-36 h-10 rounded-[4px] justify-center items-center md:gap-2'>
-            <img
-                className=' w-4 h-4'
+        <SaveButtonContainer onClick={onSave} >
+            <SaveIcon
+
                 src={save} alt='save' />
-            <h1 className='hidden md:block text-sm font-normal text-white font-roboto'>Save Changes</h1>
-        </div>
+            <SaveText >Save Changes</SaveText>
+        </SaveButtonContainer>
     )
 }
 export default SaveButton;
