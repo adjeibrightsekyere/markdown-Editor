@@ -16,8 +16,8 @@ const ToggleMode: React.FC<ToggleModeProps> = ({ isDarkMode, setIsDarkMode}) => 
     }
 
     return (
-        <div className={`min-h-screen flex   ${isDarkMode ? 'bg-[#2B2D31] text-white' : 'bg-[#2B2D31] text-black'}`} >
-            <div className=' flex border border-[#2B2D31] bg-[#2B2D31]  cursor-pointer w-40 h-20 rounded-none justify-center items-center gap-2'>
+        
+            <div className= {`flex border border-[#2B2D31] bg-[#2B2D31]  cursor-pointer w-40 p-4 rounded-none justify-center items-center gap-2   ${isDarkMode ? 'bg-[#2B2D31] text-white' : 'bg-[#2B2D31] text-black'}`}>
                 <img
                     src={Moon}
                     alt='moon'
@@ -33,7 +33,7 @@ const ToggleMode: React.FC<ToggleModeProps> = ({ isDarkMode, setIsDarkMode}) => 
                     alt='sun'
                     className={`transition-opacity ${isDarkMode ? 'opacity-100' : 'opacity-50'}`} />
             </div>
-        </div>
+        
     )
 }
 export default ToggleMode;

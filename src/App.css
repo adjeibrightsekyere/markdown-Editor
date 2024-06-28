@@ -30,6 +30,23 @@ nav, .flex-grow, .w-full {
   border-color: var(--border-color);
 }
 
+.shifted-markdown {
+  margin-left: 16rem; 
+  transition: margin-left  ease;
+}
+
+.shifted-docname {
+  margin-left: 1rem; 
+  transition: margin-left  ease;
+}
+
+.normal {
+  margin-left: 0;
+  transition: margin-left  ease;
+}
+
+
+
 .markdown-header, .preview-header {
   background-color: var(--header-bg);
   color: var(--text-secondary);

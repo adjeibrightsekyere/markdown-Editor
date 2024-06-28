@@ -18,6 +18,11 @@ export default {
       },
     },
   },
+  variants: {
+    extend: {
+      position: ['responsive', 'hover', 'focus', 'sticky'], // Ensure 'sticky' is enabled
+    },
+  },
   plugins: [require("@tailwindcss/typography")],
 }
 

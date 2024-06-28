@@ -41,7 +41,7 @@ function Preview({ markdown, isDarkMode }: PreviewProps) {
                     />
                     
             </div>
-            <div className="prose preview-content preview-text p-6"  dangerouslySetInnerHTML={{ __html: cleanHtml }}></div>
+            <div className="prose  preview-content preview-text p-6"  dangerouslySetInnerHTML={{ __html: cleanHtml }}></div>
         </div>
     )
 }

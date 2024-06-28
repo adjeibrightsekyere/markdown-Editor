@@ -38,7 +38,7 @@ function App() {
     setIsSideBarOpen(!isSideBarOpen);
   }
 
-  const handleDocumentChange = (id:number, content:string) => {
+  const handleDocumentChange = (id: number, content: string) => {
     setDocuments((docs: any[]) => {
       const updatedDocs = docs.map((doc: { id: number; }) => (doc.id === id ? { ...doc, content } : doc));
       localStorage.setItem('documents', JSON.stringify(updatedDocs));
@@ -49,7 +49,7 @@ function App() {
     }
   };
 
-  const handleDocumentRename = (id:number, name:string) => {
+  const handleDocumentRename = (id: number, name: string) => {
     setDocuments((docs: any[]) => {
       const updatedDocs = docs.map((doc: { id: number; }) => (doc.id === id ? { ...doc, name } : doc));
       localStorage.setItem('documents', JSON.stringify(updatedDocs));
@@ -131,7 +131,7 @@ function App() {
           setIsDarkMode={setIsDarkMode}
         />}
       <div className='flex flex-grow flex-col'>
-        <nav className='flex items-center justify-between border border-[#2B2D31] bg-[#2B2D31] rounded-none  w-full h-14 md:h-[72px]'>
+        <nav className='flex fixed z-20 top-0 left-0 right-0 items-center justify-between border border-[#2B2D31] bg-[#2B2D31] rounded-none  w-full h-14 md:h-[72px]'>
           <div className='flex items-center gap-2 md:gap-4  '>
             {!isSideBarOpen && <div className='flex  border border-[#35393F] w-14 md:w-[72px] h-14 md:h-[72px] bg-[#35393F] hover:bg-[#E46643]'>
               <img src={Menu}
@@ -140,12 +140,12 @@ function App() {
                 onClick={handleSideBarToggle}
               />
             </div>}
-            <img src={MARKDOWN} alt='' className='hidden md:block md:w-32 md:h-3 ' />
-
-            <DocumentName name={documents.find((doc: { id: number; }) => doc.id === activeDocId)?.name || ''}
+            <img src={MARKDOWN} alt='' className={`hidden md:block md:w-32 md:h-3  ${isSideBarOpen ? 'shifted-markdown' : 'normal'}`}  />
+             <div className={`${isSideBarOpen ? 'shifted-docname' : 'normal'}`}>
+            <DocumentName  name={documents.find((doc: { id: number; }) => doc.id === activeDocId)?.name || ''}
               onRename={(name) => handleDocumentRename(activeDocId, name)}
             />
-
+            </div> 
           </div>
           <div className='flex items-center  gap-2 md:gap-4 md:mr-3'>
             <img onClick={openDeleteModal}
@@ -157,7 +157,7 @@ function App() {
         </nav>
 
 
-        <div className='flex-grow grid grid-cols-1 md:grid-cols-2 overflow-hidden'>
+        <div className='flex-grow grid grid-cols-1 md:grid-cols-2 overflow-hidden mt-14 md:mt-[72px]'>
 
           <Editor isDarkMode={isDarkMode} markdown={markdown} setMarkdown={(content) => handleDocumentChange(activeDocId, content)} />
           <Preview isDarkMode={isDarkMode} markdown={markdown} />

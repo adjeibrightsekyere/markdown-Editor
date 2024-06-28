@@ -16,7 +16,7 @@ const DocumentName: React.FC<DocumentNameProps> = ({ name, onRename }) => {
     };
 
     return (
-        <div className='flex border  border-[#2B2D31] bg-[#2B2D31]  cursor-pointer  h-16 rounded-none justify-center items-center pr-12'>
+        <div className='flex border  border-[#2B2D31] bg-[#2B2D31]  cursor-pointer h-14 md:h-16 rounded-none justify-center items-center pr-12'>
             <div className='relative flex items-center w-full'>
                 <div className='hidden md:block border-l-2 bg-[#5A6069]'></div>
                 <img
