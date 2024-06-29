@@ -1,30 +1,33 @@
-# React + TypeScript + Vite
+In-browser Markdown Editor App
+A simple and intuitive document management application built with React, tailwindCss and styled-components. The application allows users to create, view, edit, and delete markdown documents. It also supports light and dark modes for better user experience.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+Create, View, Edit, and Delete Documents: Manage your documents with ease.
+Markdown Support: Write documents using Markdown syntax.
+Live Preview: See the rendered version of your markdown as you write.
+Dark Mode: Toggle between light and dark themes.
+Responsive Design: Works seamlessly on different screen sizes.
 
-Currently, two official plugins are available:
+Usage
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Create a New Document
+ 1.Click the + New Document button in the sidebar.
+ 2.Enter your content in the markdown editor.
+ 3.Click the Save Changes button to save your document.
+View and Edit Documents
+ 1.Click on a document from the list in the sidebar.
+ 2.Edit the content in the markdown editor.
+ 3.Changes are saved automatically or by clicking the Save Changes button.
+Delete Documents
+ 1.Click the delete button next to the document you want to delete.
+ 2.Confirm the deletion in the modal that appears.
+Toggle Dark Mode
+Use the dark mode toggle at the bottom of the sidebar to switch between light and dark themes.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Technologies Used
+React: JavaScript library for building user interfaces.
+TypeScript: Typed superset of JavaScript.
+styled-components: Visual primitives for the component age, enabling you to use component-level styles in your application.
+TailwindCss: A utility-first CSS framework that provides low-level utility classes to build custom designs without writing custom CSS.
+marked: A markdown parser and compiler.
+DOMPurify: A DOM-only, super-fast, uber-tolerant XSS sanitizer for HTML, MathML, and SVG.
