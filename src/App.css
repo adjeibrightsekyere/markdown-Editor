@@ -56,6 +56,7 @@ nav, .flex-grow, .w-full {
 .preview-only {
   position: fixed;
   top: 72px;
+ 
   left: 50%;
   transform: translateX(-50%);
   width: 100%; 
@@ -65,11 +66,11 @@ nav, .flex-grow, .w-full {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
-@media (min-width: 375px) {
+@media (max-width: 375px) {
   .preview-only {
     position: fixed;
     top: 55px;
-    
+    margin-top: 3px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%; 
